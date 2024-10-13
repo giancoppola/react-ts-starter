@@ -4,6 +4,9 @@
 
 $purple: #4F45CE;
 $black: #2F303E;
+$black-fade: rgba(47, 48, 62, 0.2);
+$draft-bg: #FEFFDF;
+$draft: #9C753A;
 
 // End Variables //
 
@@ -180,15 +183,20 @@ main {
 .app-container {
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    box-shadow: #bababa 0px 0px 20px 0px;
-    height: 85%;
-    width: 85%;
     padding: 1rem 2rem;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    @media screen and (min-width: 768px) {
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        box-shadow: #bababa 0px 0px 20px 0px;
+        height: 85%;
+        width: 85%;
+    }
 }
 
 .title-bar {
@@ -213,4 +221,54 @@ main {
 .loading-section {
     height: 100%;
     width: 100%;
+}
+
+.expenses-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.expenses-container {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    tbody {
+        tr {
+            border-bottom: solid 1px $black-fade;
+        }
+        td {
+            padding: 1rem;
+        }
+    }
+    thead {
+        tr {
+            border-bottom: solid 1px $black;
+        }
+        th {
+            text-align: left;
+            padding: 1rem;
+        }
+    }
+}
+
+.status {
+    &-draft {
+        background-color: $draft-bg;
+        color: $draft;
+        border: solid 1px $draft;
+        padding: 5px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+}
 }

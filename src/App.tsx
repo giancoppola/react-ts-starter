@@ -23,14 +23,13 @@ const App = () => {
       .then((data) => {
         setExpensesData(data);
         setExpensesFetchStatus('complete');
-        console.log(data)}
-      )
+      })
     }
     catch (e) {
       const error = e as Error;
       setExpensesFetchStatus("failed");
       error.message ? setExpensesFetchErrorMsg(error.message) : null;
-      console.log(e);
+      console.log('Error:', e);
     }
   }
   useEffect( () => {

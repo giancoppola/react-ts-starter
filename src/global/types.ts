@@ -7,6 +7,6 @@ export interface ExpenseData {
     amount: number;
     description: string;
     date: Date;
-    categpry: ExpenseCategory;
+    category: ExpenseCategory;
     status: string;
 }

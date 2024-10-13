@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Variables //
+
+$purple: #4F45CE;
+$black: #2F303E;
+
+// End Variables //
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -7,14 +15,12 @@
 *::after {
   box-sizing: border-box;
 }
-
 /*
   2. Remove default margin
 */
 * {
   margin: 0;
 }
-
 /*
   Typographic tweaks!
   3. Add accessible line-height
@@ -24,7 +30,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-
 /*
   5. Improve media defaults
 */
@@ -36,7 +41,6 @@ svg {
   display: block;
   max-width: 100%;
 }
-
 /*
   6. Remove built-in form typography styles
 */
@@ -46,7 +50,6 @@ textarea,
 select {
   font: inherit;
 }
-
 /*
   7. Avoid text overflows
 */
@@ -59,7 +62,6 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-
 /*
   8. Create a root stacking context
 */
@@ -69,7 +71,7 @@ h6 {
 }
 
 * {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -77,22 +79,20 @@ a {
   text-decoration: none;
 }
 
+// Loading Spinner //
 .lds-grid {
-  color: #4F45CE;
+    color: $purple
 }
-
 .lds-grid,
 .lds-grid div {
   box-sizing: border-box;
 }
-
 .lds-grid {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-
 .lds-grid div {
   position: absolute;
   width: 16px;
@@ -101,61 +101,51 @@ a {
   background: currentColor;
   animation: lds-grid 1.2s linear infinite;
 }
-
 .lds-grid div:nth-child(1) {
   top: 8px;
   left: 8px;
   animation-delay: 0s;
 }
-
 .lds-grid div:nth-child(2) {
   top: 8px;
   left: 32px;
   animation-delay: -0.4s;
 }
-
 .lds-grid div:nth-child(3) {
   top: 8px;
   left: 56px;
   animation-delay: -0.8s;
 }
-
 .lds-grid div:nth-child(4) {
   top: 32px;
   left: 8px;
   animation-delay: -0.4s;
 }
-
 .lds-grid div:nth-child(5) {
   top: 32px;
   left: 32px;
   animation-delay: -0.8s;
 }
-
 .lds-grid div:nth-child(6) {
   top: 32px;
   left: 56px;
   animation-delay: -1.2s;
 }
-
 .lds-grid div:nth-child(7) {
   top: 56px;
   left: 8px;
   animation-delay: -0.8s;
 }
-
 .lds-grid div:nth-child(8) {
   top: 56px;
   left: 32px;
   animation-delay: -1.2s;
 }
-
 .lds-grid div:nth-child(9) {
   top: 56px;
   left: 56px;
   animation-delay: -1.6s;
 }
-
 @keyframes lds-grid {
   0%, 100% {
     opacity: 1;
@@ -164,62 +154,63 @@ a {
     opacity: 0.5;
   }
 }
-button {
-  cursor: pointer;
-}
 
-.link-btn {
-  background: none;
-  border: none;
-  color: #4F45CE;
-  font-weight: bold;
+// End Loading Spinner //
+
+button {
+    cursor: pointer;
 }
-.link-btn:hover {
-  text-decoration: underline;
+.link-btn {
+    background: none;
+    border: none;
+    color: $purple;
+    font-weight: bold;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 main {
-  display: flex;
-  height: 100dvh;
-  width: 100dvw;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    height: 100dvh;
+    width: 100dvw;
+    justify-content: center;
+    align-items: center;
 }
-
 .app-container {
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  box-shadow: #bababa 0px 0px 20px 0px;
-  height: 85%;
-  width: 85%;
-  padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: #bababa 0px 0px 20px 0px;
+    height: 85%;
+    width: 85%;
+    padding: 1rem 2rem;
 }
 
 .title-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.title-bar__title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2F303E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $black;
+    }
 }
 
 .flex-center-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .loading-section {
-  height: 100%;
-  width: 100%;
-}/*# sourceMappingURL=index.css.map */
+    height: 100%;
+    width: 100%;
+}
